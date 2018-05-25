@@ -1,0 +1,15 @@
+[[constraint]]
+  name = "github.com/go-redis/redis"
+  version = "6.11.0"
+
+[[constraint]]
+  name = "github.com/prometheus/client_golang"
+  version = "0.8.0"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/prometheus/common"
+
+[prune]
+  go-tests = true
+  unused-packages = true
