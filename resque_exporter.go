@@ -267,18 +267,18 @@ func (e *Exporter) redisKey(a ...string) string {
 }
 
 func init() {
-	prometheus.MustRegister(version.NewCollector("resque_exporter"))
+	prometheus.MustRegister(version.NewCollector("resque-exporter"))
 }
 
 func main() {
 	flag.Parse()
 
 	if *printVersion {
-		fmt.Println(version.Print("resque_exporter"))
+		fmt.Println(version.Print("resque-exporter"))
 		return
 	}
 
-	log.Infoln("Starting resque_exporter", version.Info())
+	log.Infoln("Starting resque-exporter", version.Info())
 	log.Infoln("Build context", version.BuildContext())
 
 	if u := os.Getenv("REDIS_URL"); len(u) > 0 {

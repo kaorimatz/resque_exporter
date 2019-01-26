@@ -1,6 +1,8 @@
 repository:
-    path: github.com/kaorimatz/resque_exporter
+    path: github.com/Intellection/resque-exporter
 build:
+    binaries:
+        - name: resque-exporter
     flags: -a -tags netgo
     ldflags: |
         -X {{repoPath}}/vendor/github.com/prometheus/common/version.Version={{.Version}}

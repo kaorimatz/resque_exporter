@@ -4,24 +4,24 @@ Prometheus exporter for Resque metrics.
 
 ## Usage
 
-    ./resque_exporter
+    ./resque-exporter
 
 By default, the resque exporter collects metrics from redis://localhost:6379. You can change it using the `--redis.url` flag.
 
-    ./resque_exporter --redis.url redis://redis.example.com:6379/1
+    ./resque-exporter --redis.url redis://redis.example.com:6379/1
 
 If `REDIS_URL` environment variable is given, it takes precedence over the `--redis.url` flag.
 
-    REDIS_URL=unix:///var/run/redis.sock ./resque_exporter
+    REDIS_URL=unix:///var/run/redis.sock ./resque-exporter
 
 If your Resque is using a non-default namespace (default is `resque`) to prefix its Redis keys, specify the namespace using the `--redis.namespace` flag.
 
-    ./resque_exporter --redis.namespace app
+    ./resque-exporter --redis.namespace app
 
 ### Flags
 
-    $ ./resque_exporter --help
-    Usage of ./resque_exporter:
+    $ ./resque-exporter --help
+    Usage of ./resque-exporter:
       -redis.namespace string
             Namespace used by Resque to prefix all its Redis keys. (default "resque")
       -redis.url string
@@ -35,9 +35,9 @@ If your Resque is using a non-default namespace (default is `resque`) to prefix 
 
 ### Docker
 
-You can deploy the resque exporter using the [kaorimatz/resque-exporter](https://hub.docker.com/r/kaorimatz/resque-exporter/) Docker image.
+You can deploy the resque exporter using the [zappi/resque-exporter](https://hub.docker.com/r/zappi/resque-exporter/) Docker image.
 
-    docker run -d -p 9447:9447 kaorimatz/resque-exporter --redis.url redis://redis.example.com:6379
+    docker run -d -p 9447:9447 zappi/resque-exporter --redis.url redis://redis.example.com:6379
 
 ## Metrics
 
